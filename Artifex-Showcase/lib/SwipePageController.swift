@@ -82,11 +82,11 @@ public class SwipePageController: UIPageViewController, UIPageViewControllerDele
                 controllersArray.append(showcase)
             }
             
-            if let firstFeature = controllersArray[firstIndex] as? VCShowcasePicture {
-                setViewControllers([firstFeature], direction: .forward, animated: true, completion: nil)
-                currentController = controllersArray[firstIndex]
-                currentIndex = firstIndex
-            }
+            let firstFeature = controllersArray[firstIndex] 
+            setViewControllers([firstFeature], direction: .forward, animated: true, completion: nil)
+            currentController = controllersArray[firstIndex]
+            currentIndex = firstIndex
+            
         }
     }
     
