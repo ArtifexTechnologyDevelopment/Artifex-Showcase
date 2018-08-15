@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                = 'Artifex-Showcase'
-  s.version             = '0.5.0'
+  s.version             = '0.6.0'
   s.summary             = 'Small libraries to showcase images in a slider.'
   s.swift_version       = '4.0'
 

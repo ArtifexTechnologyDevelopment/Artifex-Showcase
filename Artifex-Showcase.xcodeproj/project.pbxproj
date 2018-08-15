@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		71A9281221249F2800D64FCC /* ArtifexShowcase.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 71A9281121249F2800D64FCC /* ArtifexShowcase.bundle */; };
+		71A928142124AFA800D64FCC /* ArtifexShowcase.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 71A9281121249F2800D64FCC /* ArtifexShowcase.bundle */; };
 		9E4582716BEF061AD485EA6F /* Pods_Artifex_Showcase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61E870C488B9C270AB9CC12 /* Pods_Artifex_Showcase.framework */; };
 		F76F6F5F21237DFC0072A392 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F6F5E21237DFC0072A392 /* AppDelegate.swift */; };
 		F76F6F6121237DFC0072A392 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F6F6021237DFC0072A392 /* ViewController.swift */; };
@@ -97,10 +97,10 @@
 		F78E943521237F2C005FF490 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				71A9281121249F2800D64FCC /* ArtifexShowcase.bundle */,
 				F78E943621237F2C005FF490 /* SwipePageController.swift */,
 				F78E943721237F2C005FF490 /* ShowcasePictureController.swift */,
 				F78E943821237F2C005FF490 /* UIViewControllerExtensions.swift */,
+				71A9281121249F2800D64FCC /* ArtifexShowcase.bundle */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -166,8 +166,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71A928142124AFA800D64FCC /* ArtifexShowcase.bundle in Resources */,
 				F76F6F6921237DFD0072A392 /* LaunchScreen.storyboard in Resources */,
-				71A9281221249F2800D64FCC /* ArtifexShowcase.bundle in Resources */,
 				F76F6F6421237DFC0072A392 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
