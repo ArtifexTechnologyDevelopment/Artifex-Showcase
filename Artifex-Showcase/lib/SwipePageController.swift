@@ -49,9 +49,9 @@ public class SwipePageController: UIPageViewController, UIPageViewControllerDele
     }
     
     private func setUpButtons() {
-        //x button
+        
         btnDismiss.frame = CGRect(x: self.view.frame.width * CGFloat(20)/375, y: self.view.frame.height * CGFloat(43)/667, width: self.view.frame.width * CGFloat(40)/375, height: self.view.frame.width * CGFloat(40)/375)
-        btnDismiss.setImage(UIImage(named:"ShowcaseCloseButton"), for: .normal)
+        btnDismiss.setImage(loadImageBundle(named: "ShowcaseCloseButton"), for: .normal)
         btnDismiss.addTarget(self, action: #selector(closeView), for: .touchUpInside)
         btnDismiss.imageEdgeInsets = UIEdgeInsets(top: 7, left: 7, bottom: 7, right: 7)
         btnDismiss.isHidden = true
@@ -59,11 +59,23 @@ public class SwipePageController: UIPageViewController, UIPageViewControllerDele
         
         //save btn
         btnMoreOptions.frame = CGRect(x: self.view.frame.width * CGFloat(315)/375, y: self.view.frame.height * CGFloat(45)/667, width: self.view.frame.width * CGFloat(40)/375, height: self.view.frame.width * CGFloat(40)/375)
-        btnMoreOptions.setImage(UIImage(named:"ShowcaseDownloadButton"), for: .normal)
+    
+        btnMoreOptions.setImage(loadImageBundle(named: "ShowcaseDownloadButton"), for: .normal)
         btnMoreOptions.addTarget(self, action: #selector(saveImage), for: .touchUpInside)
         btnMoreOptions.imageEdgeInsets = UIEdgeInsets(top: 7, left: 7, bottom: 7, right: 7)
         btnMoreOptions.isHidden = true
         self.view.addSubview(btnMoreOptions)
+    }
+    
+    func loadImageBundle(named imageName:String) -> UIImage? {
+        let podBundle = Bundle(for: self.classForCoder)
+        if let bundleURL = podBundle.url(forResource: "ArtifexShowcase", withExtension: "bundle")
+        {
+            let imageBundel = Bundle(url:bundleURL )
+            let image = UIImage(named: imageName, in: imageBundel, compatibleWith: nil)
+            return image
+        }
+        return nil
     }
     
     private func setUpDismissSwipes() {
