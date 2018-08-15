@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                = 'Artifex-Showcase'
-  s.version             = '0.4.0'
+  s.version             = '0.5.0'
   s.summary             = 'Small libraries to showcase images in a slider.'
   s.swift_version       = '4.0'
 
@@ -28,6 +28,6 @@ This library will help to manage multiple image that you want to showcase in the
 
   s.ios.deployment_target = '10.0'
   s.source_files = 'Artifex-Showcase/lib/*'
-  s.resource_bundle = { 'Artifex-Showcase' => 'Artifex-Showcase/lib/ShowcaseIcons.xcassets/*' }
+  s.resource_bundle = { 'Artifex-Showcase' => 'Artifex-Showcase/lib/ShowcaseIcons.xcassets' }
 
 end
