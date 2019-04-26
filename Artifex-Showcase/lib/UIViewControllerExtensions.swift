@@ -9,7 +9,7 @@
 import UIKit
 
 public extension UIViewController {
-    public func presentShowcase(showcase:SwipePageController, imageView:UIImageView) {
+    func presentShowcase(showcase:SwipePageController, imageView:UIImageView) {
         
         let originalFrame:CGRect = imageView.frame
         let originalBg:UIColor = self.view.backgroundColor!

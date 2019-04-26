@@ -36,12 +36,12 @@ public class SwipePageController: UIPageViewController, UIPageViewControllerDele
         setUpControllers()
     }
     
-    public init(style: UIPageViewControllerTransitionStyle = .scroll, navigationOrientation: UIPageViewControllerNavigationOrientation = .horizontal, options:[String:Any]? = nil, imagesArray:[UIImage], firstIndex:Int = 0, firstImageView:UIImageView) {
+    public init(style: UIPageViewController.TransitionStyle = .scroll, navigationOrientation: UIPageViewController.NavigationOrientation = .horizontal, options:[String:Any]? = nil, imagesArray:[UIImage], firstIndex:Int = 0, firstImageView:UIImageView) {
         self.imagesArray = imagesArray
         self.firstIndex = firstIndex
         self.firstImageView = firstImageView
         
-        super.init(transitionStyle: style, navigationOrientation: navigationOrientation, options: options)
+        super.init(transitionStyle: style, navigationOrientation: navigationOrientation, options: convertToOptionalUIPageViewControllerOptionsKeyDictionary(options))
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -154,7 +154,7 @@ public class SwipePageController: UIPageViewController, UIPageViewControllerDele
     
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
-        guard let viewControllerIndex = controllersArray.index(of: viewController as! VCShowcasePicture) else {
+        guard let viewControllerIndex = controllersArray.firstIndex(of: viewController as! VCShowcasePicture) else {
             return nil
         }
         
@@ -172,7 +172,7 @@ public class SwipePageController: UIPageViewController, UIPageViewControllerDele
     }
     
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = controllersArray.index(of: viewController as! VCShowcasePicture) else {
+        guard let viewControllerIndex = controllersArray.firstIndex(of: viewController as! VCShowcasePicture) else {
             return nil
         }
         
@@ -191,7 +191,13 @@ public class SwipePageController: UIPageViewController, UIPageViewControllerDele
     
     public func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let vc = pageViewController.viewControllers![0]
-        self.currentIndex = controllersArray.index(of: vc as! VCShowcasePicture)
+        self.currentIndex = controllersArray.firstIndex(of: vc as! VCShowcasePicture)
         self.currentController = controllersArray[self.currentIndex]
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalUIPageViewControllerOptionsKeyDictionary(_ input: [String: Any]?) -> [UIPageViewController.OptionsKey: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIPageViewController.OptionsKey(rawValue: key), value)})
 }

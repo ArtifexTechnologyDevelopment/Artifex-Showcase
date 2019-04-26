@@ -1,14 +1,14 @@
 Pod::Spec.new do |s|
   s.name                = 'Artifex-Showcase'
-  s.version             = '0.6.0'
-  s.summary             = 'Small libraries to showcase images in a slider.'
-  s.swift_version       = '4.0'
+  s.version             = '1.0.0'
+  s.summary             = 'Small libraries to showcase images in a slider. Adapted for latest Swift version (Swift 5).'
+  s.swift_version       = '5.0'
 
   s.description      = <<-DESC
 This library will help to manage multiple image that you want to showcase in the same showroom. Multiple customization options have been added to this library.
                        DESC
 
-  s.homepage         = 'https://github.com/artifextechdev/Artifex-Showcase'
+  s.homepage         = 'https://github.com/ArtifexTechnologyDevelopment/Artifex-Showcase'
   s.license      = { :type => 'Apache License, Version 2.0', :text => <<-LICENSE
                             Licensed under the Apache License, Version 2.0 (the "License");
                             you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ This library will help to manage multiple image that you want to showcase in the
                             LICENSE
   }
   s.author           = { 'Artifex Tech Development' => 'developer@artifextechdevelopment.com' }
-  s.source           = { :git => 'https://github.com/artifextechdev/Artifex-Showcase.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/ArtifexTechnologyDevelopment/Artifex-Showcase.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '10.0'
   s.source_files = 'Artifex-Showcase/lib/*.swift'
